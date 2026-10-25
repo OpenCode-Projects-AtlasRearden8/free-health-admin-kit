@@ -1,0 +1,132 @@
+/* Shared print styles for the Free Health Admin Kit.
+   All sheets are designed for US Letter (8.5in x 11in), printed at 100%. */
+
+:root {
+  --ink: #2b2a28;
+  --soft: #6b6560;
+  --line: #b9b2aa;
+  --faint: #e7e2dc;
+  --accent: #2f6f5e;
+  --accent-soft: #e3efeb;
+  --paper: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@page {
+  size: letter;
+  margin: 0.45in 0.55in;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 11.25pt;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, .label { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* ---- header block shared by every sheet ---- */
+.kit-head {
+  border-bottom: 2.5pt solid var(--accent);
+  padding-bottom: 6pt;
+  margin-bottom: 12pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.kit-head h1 { font-size: 17pt; letter-spacing: 0.3pt; }
+.kit-head .tag {
+  font-size: 8.5pt;
+  color: var(--soft);
+  text-align: right;
+  line-height: 1.25;
+}
+
+.intro {
+  font-size: 10.5pt;
+  color: var(--soft);
+  margin-bottom: 12pt;
+}
+
+h2 {
+  font-size: 12pt;
+  text-transform: uppercase;
+  letter-spacing: 0.8pt;
+  color: var(--accent);
+  margin: 11pt 0 5pt 0;
+}
+h2:first-of-type { margin-top: 4pt; }
+
+.note {
+  background: var(--accent-soft);
+  border-left: 3pt solid var(--accent);
+  padding: 6pt 9pt;
+  font-size: 10pt;
+  margin: 10pt 0;
+}
+
+.footnote {
+  margin-top: 14pt;
+  border-top: 0.75pt solid var(--line);
+  padding-top: 5pt;
+  font-size: 8.5pt;
+  color: var(--soft);
+}
+
+/* ---- checkboxes ---- */
+.check {
+  list-style: none;
+}
+.check li {
+  padding-left: 22pt;
+  text-indent: -22pt;
+  margin-bottom: 3.5pt;
+}
+.check li::before {
+  content: "";
+  display: inline-block;
+  width: 10.5pt;
+  height: 10.5pt;
+  border: 1.3pt solid var(--ink);
+  border-radius: 1.5pt;
+  margin-right: 9pt;
+  text-indent: 0;
+}
+
+/* ---- fill-in lines ---- */
+.blank {
+  display: inline-block;
+  border-bottom: 1pt solid var(--ink);
+  min-width: 120pt;
+  height: 13pt;
+  vertical-align: bottom;
+}
+
+/* ---- two column helpers ---- */
+.cols { display: flex; gap: 18pt; }
+.cols > div { flex: 1; min-width: 0; }
+
+/* ---- tables ---- */
+table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+th {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.6pt;
+  background: var(--faint);
+  text-align: left;
+  padding: 5pt 7pt;
+  border: 0.75pt solid var(--ink);
+}
+td {
+  border: 0.75pt solid var(--ink);
+  padding: 7pt;
+  height: 26pt;
+  vertical-align: top;
+}
+
+.page-break { page-break-before: always; }
+.avoid-break { page-break-inside: avoid; }
